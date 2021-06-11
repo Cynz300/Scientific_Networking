@@ -44,6 +44,8 @@ Starting off with some basic questions about the data
 
 ## Initial EDA
 
+### General Information
+
 This chart shows the distribution of all the publications over the years. 
 
 ![Original Year](img/annual_article_release.png)
@@ -56,11 +58,13 @@ The limitation of this dataset stems from the fact it pulls publications from da
 
 Delving into the citations was a bit more illuminating. The graph and chart below showcase how many publication had x number of citations and how the distribution panned out.  While not unexpected, roughly 60% of all publications had less than 10 citations. 18 % of which had 0 citations.
 
-<img src="img/Citation_breakdown.png" alt="citation" width="200" height="500"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="img/citation_distribution.png" alt="citation" width="700" height="500">
+<img src="img/Citation_breakdown.png" alt="citation" width="250" height="500"> &nbsp; <img src="img/citation_distribution.png" alt="citation" width="700" height="500">
 
 For authors, it was more biased towards having three or fewer authors which captured more than 75% of the group. Roughly 21% was an individual contributor and over 30% had two.
 
-<img src="img/author_breakdown.png" alt="citation" width="200" height="500"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="img/author_distribution.png" alt="citation" width="700" height="500">
+<img src="img/author_breakdown.png" alt="citation" width="250" height="500"> &nbsp; <img src="img/author_distribution.png" alt="citation" width="700" height="500">
+
+### Non-Influential Publications
 
 Looking at the distribution and frequency of the most popular first authors, last authors, venues and keywords, I initially focused on the 0 citations to see if there were an interesting trends
 
@@ -72,10 +76,9 @@ A lot of the publications occured in repositories, journals and research institu
 
 One of the common venues was Praxis der Informationsverarbeitung und Kommunikation (Information Processing and Communication Practice). An interesting note is that it ceased running in 2016.
 
-When expanding to include all the groups that had less than 10 citations, the group expanded to include researchers like Wei Li and Makoto Takizawa. The frequency of the data mining and neural networks increased even further and the key venues did not differ significantly.
+When expanding to include all the groups that had less than 10 citations, the group expanded to include researchers like Wei Li, Wei Wang, and Makoto Takizawa but did not change drastically. The frequency of the data mining and neural networks increased even further and the key venues did not differ significantly.
 
 ![img](img/frequency_layouts_10_less.png)
-
 
 Some other key information were that there were 1500001 total entries. Of those, 1499718 have release year was noted between 1500 and 2020. (0.02% removal)
 
@@ -83,25 +86,70 @@ Of those 1486243 had a citation count and an author. ~ 99.1% is still usable. (0
 
 There are 1245030 publications with keywords notated, roughly 16.23% have no keywords
 
+### Influential Publications
 
-## Key Insights from Non-Influential Articles
+Focusing on the more influential publications (# of citations >= 10). Most of the non-influential papers authors and venues tended to drop off, other than in a few cases such as Authors like Wei Wang and Wei Li or venues such as Clinical Orthopaedics and Related Research. What was interesting is that first keyword still remained data mining and neural networks which highlights all the interest and research efforts centered in this area. The most influential authors tended to submit to a multitude of journals and have more authors that would lend credence. For e.g. Thomas S. Huang submitted to over 80 different publishers with a at least 2 authors in each publication.
+
+![img](img/focused_frequency_layouts.png)
+
+## Key Insights 
+
+### Non-Influential Articles
 
 * Almost all publications with 0 citations are with only one author.
 * Publications with negligble keywords tend to get 0 citations.
 * Most authors submitted to one journal/ group - if submit to other areas, its only a one off.
 * 75% of all submissions have 3 or fewer authors
 
+### Influential Articles
+
+* Publications had more than one author
+* Publications were submitted to a variety of sources
+* Most keywords remained the same.
+
 ## Hypothesis Testing
 
-### Null Hypothesis: There is no difference between all the most prolific Authors, Venues or Keywords
+#### Null Hypothesis: There is no intergroup difference between all the most prolific Authors, Venues or Keywords
 
-### Alternate Hypothesis: There is an intergroup difference between the Authors, Venues or Keywords. 
+#### Alternate Hypothesis: There is an intergroup difference between the Authors, Venues or Keywords. 
 
-#### Note: Each Hypothesis is independent of one another
+Note: Each Hypothesis is independent of one another and will run with an alpha of 0.05. Since this is testing the same data several times, a bonferroni correction will apply. Since each one checks one another ten times, the new alpha will be 0.005.
 
-##### Alpha = 0.05
+### Results
 
-## Insights from Influential Articles
+#### Intergroup Reference for First Author
+![](img/first_author_boxplot.png)
+![](img/first_author_pval.png)
+
+
+
+![](img/last_author_boxplot.png)
+![](img/last_author_pval.png)
+
+![](img/first_last_author_boxplot.png)
+![](img/first_last_author_pval.png)
+
+![](img/last_first_author_boxplot.png)
+![](img/last_first_author_pval.png)
+
+![](img/venue_boxplot.png)
+![](img/veneue_pval.png)
+
+![](img/keywords_boxplot.png)
+![](img/keywords_pval.png)
+
+### Is there a difference between the most prolific Author and prolific Venue?
+
+#### Null Hypothesis: There is no difference between all the most prolific Author and Venue
+
+#### Alternate Hypothesis: There is an intragroup difference between the Author and Venue
+
+![](img/Author_v_Venue.png)
+![](img/Nicholas_Author_v_Venue.png)
+
+
+
+## Conclusions
 
 1. The keyword failed to reject the null hypothesis in most cases. We can conclude there is no stat. sig. difference in keywords aside from computation complexity.
 2. The last author failed to reject the null hypothesis in most cases except for 1. This means the most profilic last authors have no stat. sign. impact on # of citations other than vs Saharon.
