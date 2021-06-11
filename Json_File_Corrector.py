@@ -7,8 +7,8 @@ new = open("test_data.json", "w")
 
 with open('dblpv13.json',"r") as fp:
      for line in tqdm(fp):
-        if idx > 10000: 
-            break
+        # if idx > 10000: 
+        #     break
         try:
             if len(line) < 3:
                 continue
