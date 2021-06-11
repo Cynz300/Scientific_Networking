@@ -1,4 +1,4 @@
-# Scientific_Networking
+# Publication Influence
 
 ## Background
 
@@ -120,32 +120,32 @@ The test used is the Mann Whitney U in which in checks if the person is more sig
 ### Results
 
 #### Intergroup Reference for Most Prolific First Author
-![](img/first_author_boxplot.png)
-![](img/first_author_pval.png)
+![check](img/first_author_boxplot.png)
+![check](img/first_author_pval.png)
 
 Results = Failed to reject the null hypothesis
 
 #### Intergroup Reference for Most Prolific Last Author
-![](img/last_author_boxplot.png)
-![](img/last_author_pval.png)
+![check](img/Last_author_boxplot.png)
+![check](img/last_author_pval.png)
 
 Results = Failed to reject the null hypothesis except for Wen Gao (0.0000235)
 
 #### Intergroup Reference for Most Prolific First Author As Last Author
-![](img/first_last_author_boxplot.png)
-![](img/first_last_author_pval.png)
+![check](img/first_last_author_boxplot.png)
+![check](img/first_last_author_pval.png)
 
 Results = Failed to reject the null hypothesis
 
 #### Intergroup Reference for Most Prolific Last Author As First Author
-![](img/last_first_author_boxplot.png)
-![](img/last_first_author_pval.png)
+![check](img/last_first_author_boxplot.png)
+![check](img/last_first_author_pval.png)
 
 Results = Failed to reject the null hypothesis
 
 **Key Note** Identified that one author in particular had much more success - Nicholas Jennings. Rerun p - plot with him as reference
 
-![check](img/last_furst_author_pval_jennings.png)
+![check](img/last_first_author_pval_jennings.png)
 
 Results = Rejected the null hypothesis for the following:
 * Thomas S. Huang (0.0038) 
@@ -156,8 +156,8 @@ Results = Rejected the null hypothesis for the following:
 Unable to reject for remaining authors.
 
 #### Intergroup Reference for Most Prolific Venue
-![](img/Venue_boxplot.png)
-![](img/venue_pval.png)
+![check](img/Venue_boxplot.png)
+![check](img/venue_pval.png)
 
 Results = Able to reject the null hypothesis in all cases except for BMC Bioinformatics
 * ICRA (1.6255044601877436e-168)
@@ -170,8 +170,8 @@ Results = Able to reject the null hypothesis in all cases except for BMC Bioinfo
 * IEEE Transactions on Information Theory (4.445e-49)
 
 #### Intergroup Reference for Most Prolific Venue
-![](img/keywords_boxplot.png)
-![](img/keywords_pval.png)
+![check](img/keywords_boxplot.png)
+![check](img/keywords_pval.png)
 
 Results = Failed to reject the null hypothesis except for computational complexity (0.0009)
 
@@ -196,11 +196,11 @@ Results = Unable to reject the null hypothesis with a p-value of 0.248
 
 ## Conclusions
 
-1. The keyword failed to reject the null hypothesis in most cases. We can conclude there is no stat. sig. difference in keywords aside from computation complexity.
-2. The first author did not have any statistically significant influence over any other author.
-3. The last author failed to reject the null hypothesis in most cases except for 1. This means the most profilic last authors have no stat. sign. impact on # of citations other than vs Saharon.
-4. 
-5. The most prolific venue did have multiple significant difference where it is greater. Only BMC Informatics have similar penetration.
+1. Majority of authors, keywords and venues did not have a statistically significant inference that they had greater influence or penetration.
+2. Last Authors tend to be Principal Investigators of Labs and ones that are prolific tend to have greater saturation and expediency than other versus the opposite.
+3. The most prolific venue did have multiple significant difference where it is greater. Only BMC Informatics have similar penetration.
+4. Venues are statistically more important to ensure a publication is influential; however, there are specific cases in which the Author will have more clout.
+5. Authors who have more influence tend to publish in a wide variety of journals versus concentrating in one area.
 
 
 ## Contact
