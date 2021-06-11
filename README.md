@@ -25,6 +25,7 @@ Starting off with some basic questions about the data
 
 ### General Data
 * Amount of journal releases over the number of years
+* Citation Distribution?
 * How much has no or negligible citations (i.e. low impact journals)?
     * This would assume either 0 citations and/or no author
     * What percentage is this of total?
@@ -40,6 +41,35 @@ Starting off with some basic questions about the data
 * Is there a difference between the #1 and #10 source? What about #5 and #10?
     * Repeat for each venue, authors, keywords
 * Is there a statistically significant difference between the #1 venue and #1 author?
+
+## Initial EDA
+
+This chart shows the distribution of all the publications over the years. ![Original Year](img/annual_article_release.png)
+This shows it is heavily concentrated in the mid-2000s and where the majority of the data is originated from and what we can refer to. ![Zoomed Year](img/annual_article_release_1980-2015.png) The limitation of this dataset stems from the fact it pulls publications from data science and computer science publication databases. Since this is a growing field that made major in-roads with the mainstream adoption of computers coupled with massive improvements in computing efficiency, the initial publication rates make sense. The drop off in 2015 onward may be due to the fact I was unable to load all of the dataset or that the authors and publishers have made it more difficult to pull this information. 
+
+Delving into the citations was a bit more illuminating. The graph and chart below showcase how many publication had x number of citations and how the distribution panned out.  While not unexpected, roughly 60% of all publications had less than 10 citations. 18 % of which had 0 citations.
+
+<img src="img/Citation_breakdown.png" alt="citation" width="200" height="500"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="img/citation_distribution.png" alt="citation" width="700" height="500">
+
+Looking at the distribution and frequency of the most popular first authors, last authors, venues and keywords, I initially focused on the 0 citations to see if there were an interesting trends
+![img](img/frequency_layouts.png)
+From what is shown Karl Rihaczek is one of the most prolific. Most of the authors were both the first and last author signifiying that they were the only author coupled with most of their publications were limited to one venue.
+
+One of the common venues was Praxis der Informationsverarbeitung und Kommunikation (Information Processing and Communication Practice). An interesting note is that it ceased running in 2016.
+
+A lot of the publications occured in repositories and research institutes
+
+When expanding to include all the groups that had less than 10 citations, the
+
+![img](img/frequency_layouts_10_less.png)
+
+
+Some other key information were that there were 1500001 total entries. Of those, 1499718 have release year was noted between 1500 and 2020. (0.02% removal)
+
+Of those 1486243 had a citation count and an author. ~ 99.1% is still usable. (0.9% removal)
+
+There are 1245030 journals with keywords notated, roughly 16.23% have no keywords
+
 
 ## Insights from Non-Influential Articles
 
