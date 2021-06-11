@@ -11,17 +11,13 @@ The data set can be downloaded directly [here](https://originalstatic.aminer.cn/
 
 ## Data Pipeline
 
-The data is provided in a JSON format. However, due to some original data errors such as additional columns and null json rows, the data cannot be loaded in directly into Spark or Pandas without additional cleaning. This is addressed through the Json_File_Corrector.py.
+The data is provided in a JSON format. However, due to some original data errors such as irregular commas and null json rows, the data cannot be loaded in directly into Spark or Pandas without additional cleaning. This is addressed through the Json_File_Corrector.py.
 
 These original errors pushed my first approach to a simplier method using File Open and manually changing each line into a workable Pandas DataFrame. Due to the size of the file and limitations with Memory, this limited my scope to the first 1.5 million publications. 
 
-The DataFrame had sublists and subdictionaries that had key information about the authors, publishers, keywords. I created methods that extracted that information and simplified the DataFrame.
+The DataFrame had sublists and subdictionaries that had key information about the authors, publishers, keywords. I created methods that extracted that information and simplified the DataFrame. There were rows where the year and author were not available along with errant details like impossible year or 'null' authors, venues and keywords. These rows were removed.
 
-There were items where the year (1500 - 2021), author, and information were not available. These items were removed.
-
-For more focused items, I set a minimum threshold of 10 citations as it is currently standard practice that any articles that are relevant are 10 or above.
-These were not controlled for time.
-
+The data was split into two distinct DataFrames. One with 0 citations and one with 10 or more citations. The reason for this is that I wanted to investigate non-penetrating citations (i.e. 0 citations) as well as relevant citations (>= 10 citations). The selected threshold of 10 citations is currently standard practice for relevant articles.
 
 ## Questions
 
@@ -29,13 +25,12 @@ Starting off with some basic questions about the data
 
 ### General Data
 * Amount of journal releases over the number of years
-* How much has no or negligible citations (i.e. junk journals)?
+* How much has no or negligible citations (i.e. low impact journals)?
     * This would assume either 0 citations and/or no author
     * What percentage is this of total?
-* Of the junk citations - who are the worst offenders?
+* Of the non-penetrating citations - who are the top publishers?
     * Look at Authors and Venues
     * Do they have a common area or tend to use a specific keyword?
-    * Limit to top 10
 
 ###  Focused Data  
 * Limit the citations to be something considered influential. 10 or more citations is considered to be solid.
@@ -46,12 +41,11 @@ Starting off with some basic questions about the data
     * Repeat for each venue, authors, keywords
 * Is there a statistically significant difference between the #1 venue and #1 author?
 
-## Insights from 'Junk Citations'
+## Insights from Non-Influential Articles
 
 * Praxis der Informationsverarbeitung und Kommunikation ceased running in 2016 - means Information processing and communication practice
 * SIGGRAPH Computer Animation Festival is a festival - more URL links
 * Datenschutz und Datensicherheit - Data Protection and Data Safety
-
 
 * Almost submissions are all only one author with 0 - negligble keywords tend to get 0 citations though some of the venues are high performing
 * Most authors submitted to one journal/ group - if submit to other areas, its only a one off.
@@ -67,7 +61,7 @@ Starting off with some basic questions about the data
 
 ##### Alpha = 0.05
 
-## Insights
+## Insights from Influential Articles
 
 1. The keyword failed to reject the null hypothesis in most cases. We can conclude there is no stat. sig. difference in keywords aside from computation complexity.
 2. The last author failed to reject the null hypothesis in most cases except for 1. This means the most profilic last authors have no stat. sign. impact on # of citations other than vs Saharon.
