@@ -90,7 +90,7 @@ There are 1245030 publications with keywords notated, roughly 16.23% have no key
 
 Focusing on the more influential publications (# of citations >= 10). Most of the non-influential papers authors and venues tended to drop off, other than in a few cases such as Authors like Wei Wang and Wei Li or venues such as Clinical Orthopaedics and Related Research. What was interesting is that first keyword still remained data mining and neural networks which highlights all the interest and research efforts centered in this area. The most influential authors tended to submit to a multitude of journals and have more authors that would lend credence. For e.g. Thomas S. Huang submitted to over 80 different publishers with a at least 2 authors in each publication.
 
-![img](img/focused_frequency_layouts.png)
+![img](img/Focused_Frequency_Layouts.png)
 
 ## Key Insights 
 
@@ -109,34 +109,71 @@ Focusing on the more influential publications (# of citations >= 10). Most of th
 
 ## Hypothesis Testing
 
-#### Null Hypothesis: There is no intergroup difference between all the most prolific Authors, Venues or Keywords
+* Null Hypothesis: There is no intergroup difference between all the most prolific Authors, Venues or Keywords
 
-#### Alternate Hypothesis: There is an intergroup difference between the Authors, Venues or Keywords. 
+* Alternate Hypothesis: There is an intergroup difference between the Authors, Venues or Keywords. 
 
 Note: Each Hypothesis is independent of one another and will run with an alpha of 0.05. Since this is testing the same data several times, a bonferroni correction will apply. Since each one checks one another ten times, the new alpha will be 0.005.
 
+The test used is the Mann Whitney U in which in checks if the person is more significant than the other.
+
 ### Results
 
-#### Intergroup Reference for First Author
+#### Intergroup Reference for Most Prolific First Author
 ![](img/first_author_boxplot.png)
 ![](img/first_author_pval.png)
 
+Results = Failed to reject the null hypothesis
 
-
+#### Intergroup Reference for Most Prolific Last Author
 ![](img/last_author_boxplot.png)
 ![](img/last_author_pval.png)
 
+Results = Failed to reject the null hypothesis except for Wen Gao (0.0000235)
+
+#### Intergroup Reference for Most Prolific First Author As Last Author
 ![](img/first_last_author_boxplot.png)
 ![](img/first_last_author_pval.png)
 
+Results = Failed to reject the null hypothesis
+
+#### Intergroup Reference for Most Prolific Last Author As First Author
 ![](img/last_first_author_boxplot.png)
 ![](img/last_first_author_pval.png)
 
-![](img/venue_boxplot.png)
-![](img/veneue_pval.png)
+Results = Failed to reject the null hypothesis
 
+**Key Note** Identified that one author in particular had much more success - Nicholas Jennings. Rerun p - plot with him as reference
+
+![check](img/last_furst_author_pval_jennings.png)
+
+Results = Rejected the null hypothesis for the following:
+* Thomas S. Huang (0.0038) 
+* Philip S. Yu (0.0000495)
+* Moshe Vardi (0.00017)
+* Hermann Ney (0.00089)
+* Kang G. Shin (0.00488). 
+Unable to reject for remaining authors.
+
+#### Intergroup Reference for Most Prolific Venue
+![](img/Venue_boxplot.png)
+![](img/venue_pval.png)
+
+Results = Able to reject the null hypothesis in all cases except for BMC Bioinformatics
+* ICRA (1.6255044601877436e-168)
+* Lecture Notes in Computer Science (7.379e-249)
+* European Journal of Operational Research (5.083e-60)
+* Commun. ACM (2.521e-05) 
+* IEEE Transactions on Signal Processing (1.832e-38) 
+* Clinical Orthopaedics and Related Research (4.878e-178) 
+* Expert Syst. Appl. (1.1716025710932673e-135)
+* IEEE Transactions on Information Theory (4.445e-49)
+
+#### Intergroup Reference for Most Prolific Venue
 ![](img/keywords_boxplot.png)
 ![](img/keywords_pval.png)
+
+Results = Failed to reject the null hypothesis except for computational complexity (0.0009)
 
 ### Is there a difference between the most prolific Author and prolific Venue?
 
@@ -144,25 +181,29 @@ Note: Each Hypothesis is independent of one another and will run with an alpha o
 
 #### Alternate Hypothesis: There is an intragroup difference between the Author and Venue
 
+Assuming alpha = 0.05 and using the t-test with a Welch Correction
+
 ![](img/Author_v_Venue.png)
+
+Results = Able to reject the null hypothesis with a p-value of 0.043
+
+#### Coupling this for highest rated Author
+
 ![](img/Nicholas_Author_v_Venue.png)
 
+Results = Unable to reject the null hypothesis with a p-value of 0.248
 
 
 ## Conclusions
 
 1. The keyword failed to reject the null hypothesis in most cases. We can conclude there is no stat. sig. difference in keywords aside from computation complexity.
-2. The last author failed to reject the null hypothesis in most cases except for 1. This means the most profilic last authors have no stat. sign. impact on # of citations other than vs Saharon.
-3. The most prolific venue did have multiple significant difference where it is greater. Only BMC Informatics have similar penetration.
+2. The first author did not have any statistically significant influence over any other author.
+3. The last author failed to reject the null hypothesis in most cases except for 1. This means the most profilic last authors have no stat. sign. impact on # of citations other than vs Saharon.
+4. 
+5. The most prolific venue did have multiple significant difference where it is greater. Only BMC Informatics have similar penetration.
 
-Assuming number of citations indicates it penetration in the scientific community
 
-## Diving Deeper
+## Contact
 
-### We would like to see if there is truly a difference between the most prolific Author and prolific Venue.
-
-#### Null Hypothesis: There is no difference between all the most prolific Author and Venue
-
-#### Alternate Hypothesis: There is an intragroup difference between the Author and Venue
-##### Alpha is 0.05
+If you would like to get in contact, you can reach me via my [LinkedIn](https://www.linkedin.com/in/ilya-getsin-561b8620/) or via my [email](ilyagetsin@gmail.com)
 
