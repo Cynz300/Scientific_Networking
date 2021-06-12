@@ -202,9 +202,14 @@ Results = Unable to reject the null hypothesis with a p-value of 0.248
 4. Venues are statistically more important to ensure a publication is influential; however, there are specific cases in which the Author will have more clout.
 5. Authors who have more influence tend to publish in a wide variety of journals versus concentrating in one area.
 
+## Presentation
+
+https://docs.google.com/presentation/d/1vxbHjHe9lsIdBtQVxUmYjMBrR3rnO2Fk_nToXwInFd0/edit?usp=sharing
+
 ## Prepared and Developed
 
-Ilya Getsin
+Ilya Getsin 
+June 2021
 
 ## Contact
 
